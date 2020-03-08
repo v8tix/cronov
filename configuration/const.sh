@@ -1,0 +1,3 @@
+TAG="0.0.1.v20200308"
+IMAGE="cronov"
+IMAGE_TAG=""${IMAGE}":"${TAG}""
