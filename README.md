@@ -31,12 +31,12 @@ Welcome to the Cronov project. This image is part of the [Drako](https://github.
   * executables.
     * Each script under this directory wraps a useful Docker command.
     * To give a try the container:
-      * Execute the run.sh script. This starts a detached container.
-      * To get a console, you will need to execute the attach.sh script.
-      * :bulb: Like in SSH remote connections, you will need to write 'exit' and then press Enter to close the opened connection.
-      * Once you are done with this container, there are two ways to stop it:
-        * If you want to just stop it and keep this image, execute the stop.sh script, or         
-        * you want to stop it and you no longer need this image, execute the delete.sh script instead.
+      * Execute the run.sh script. This will start a detached container.
+      * To get a console, execute the attach.sh script.
+      * :bulb: Like in SSH connections, type 'exit' and then press Enter to close the console.
+      * When you are done, there are two ways to stop it:
+        * If you want to stop it, and keep this image, execute the stop.sh script,         
+        * Otherwise execute the delete.sh script instead.
 ## Authors
 * Initial work
   * V8TIX - info@v8tix.com   
