@@ -8,6 +8,7 @@ Welcome to the Cronov project. This image is part of the [Drako](https://github.
 
 #### Prerequisites
 * Docker Engine installed.
+* [Zemni](https://github.com/v8tix/zemni) 0.0.3.v20200324.
 
 ## What this guide covers
 1. The Cronov image contexts.
