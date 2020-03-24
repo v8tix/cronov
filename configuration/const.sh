@@ -1,3 +1,3 @@
-TAG="0.0.3.v20200324"
+TAG="0.0.4.v20200324"
 IMAGE="cronov"
 IMAGE_TAG=""${IMAGE}":"${TAG}""
