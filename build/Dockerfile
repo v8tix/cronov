@@ -3,12 +3,10 @@ LABEL MAINTAINER="V8TIX"
 LABEL MAIL="info@v8tix.com"
 RUN ["/bin/bash", "-c", "mkdir /home/libraries"]
 RUN ["/bin/bash", "-c", "mkdir /home/libraries/zemni"]
-RUN ["/bin/bash", "-c", "mkdir /home/v8tix/temp"]
 ADD repositories /home/repositories
 ADD packages /home/packages
 ADD entrypoint /home/entrypoint
 RUN ["/bin/bash", "-c", "chmod 777 /var/log/"]
-RUN ["/bin/bash", "-c", "chmod 777 /home/v8tix/temp"]
 RUN ["/bin/bash", "-c", "chmod +x -R /home/repositories"]
 RUN ["/bin/bash", "-c", "chmod +x -R /home/packages"]
 RUN ["/bin/bash", "-c", "chmod +x -R /home/entrypoint"]
@@ -18,6 +16,8 @@ RUN ["/bin/bash", "-c", "git clone https://github.com/v8tix/zemni.git /home/libr
 RUN ["/bin/bash", "-c", "chmod +x -R /home/libraries/zemni"]
 RUN ["/bin/bash", "-c", "/home/libraries/zemni/system/setup/group_user/group_user.sh"]
 RUN ["/bin/bash", "-c", "/home/libraries/zemni/system/setup/locale/locale.sh"]
+RUN ["/bin/bash", "-c", "mkdir /home/v8tix/temp"]
+RUN ["/bin/bash", "-c", "chmod 777 /home/v8tix/temp"]
 ENV LANG en_US.utf8
 RUN ["/bin/bash", "-c", "rm -rf /home/packages"]
 RUN ["/bin/bash", "-c", "mv /home/entrypoint /home/v8tix"]
