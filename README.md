@@ -8,7 +8,7 @@ Welcome to the Cronov project. This image is part of the [k8sb](https://github.c
 
 #### Prerequisites
 * Docker Engine installed.
-* [Zemni](https://github.com/v8tix/zemni) 0.0.4.v20200324.
+* [Zemni](https://github.com/v8tix/zemni) 0.0.6.v20200416.
 
 ## What this guide covers
 1. The Cronov image contexts.
