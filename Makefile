@@ -34,6 +34,14 @@ cont/stop:
 cont/delete: cont/stop
 	@docker rmi "${IMAGE_TAG}"
 
+## repo/merge: merge into master
+.PHONY: repo/merge
+repo/merge:
+	@git checkout master
+	@git pull origin master
+	@git merge "${TAG}"
+	@git push origin master
+
 # ==================================================================================== #
 # BUILD
 # ==================================================================================== #
