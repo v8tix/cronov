@@ -1,5 +1,5 @@
 #######################################
-# Debian Buster repos.
+# Debian Bullseye repos.
 # Globals:
 #   NO_ERRORS_CODE
 # Arguments:
@@ -10,12 +10,14 @@
 #######################################
 generate_sources_content() {
 read -r -d '' sources_content<<"EOF"
-deb http://deb.debian.org/debian buster main contrib non-free
-deb-src http://deb.debian.org/debian buster main contrib non-free
-deb http://deb.debian.org/debian-security/ buster/updates main contrib non-free
-deb-src http://deb.debian.org/debian-security/ buster/updates main contrib non-free
-deb http://deb.debian.org/debian buster-updates main contrib non-free
-deb-src http://deb.debian.org/debian buster-updates main contrib non-free
+deb http://deb.debian.org/debian/ bullseye main
+deb-src http://deb.debian.org/debian/ bullseye main
+deb http://security.debian.org/debian-security bullseye-security main contrib
+deb-src http://security.debian.org/debian-security bullseye-security main contrib
+deb http://deb.debian.org/debian/ bullseye-updates main contrib
+deb-src http://deb.debian.org/debian/ bullseye-updates main contrib
+deb http://deb.debian.org/debian-security/ bullseye-security main
+deb-src http://deb.debian.org/debian-security/ bullseye-security main
 EOF
 
 echo "${sources_content}"
