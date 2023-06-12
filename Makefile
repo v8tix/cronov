@@ -14,25 +14,25 @@ help:
 # DEVELOPMENT
 # ==================================================================================== #
 
-## cont/run: runs the container in the background
-.PHONY: cont/run
-cont/run:
-	@docker run -t --rm --name "${IMAGE}" --hostname "${IMAGE}" -d "${IMAGE_TAG}"
+## cntr/run: runs the container in the background
+.PHONY: cntr/run
+cntr/run:
+	@./executables/run.sh
 
-## cont/attach: attaches the running container
-.PHONY: cont/attach
-cont/attach:
-	@docker exec -it "${IMAGE}" bash
+## cntr/attach: attaches the running container
+.PHONY: cntr/attach
+cntr/attach:
+	@./executables/attach.sh
 
-## cont/stop: stop the running container
-.PHONY: cont/stop
-cont/stop:
-	@docker stop "${IMAGE}"
+## cntr/stop: stop the running container
+.PHONY: cntr/stop
+cntr/stop:
+	@./executables/stop.sh
 
-## cont/delete: stop and delete the image
-.PHONY: cont/delete
-cont/delete: cont/stop
-	@docker rmi "${IMAGE_TAG}"
+## cntr/delete: stop and delete the image
+.PHONY: cntr/delete
+cntr/delete: cntr/stop
+	@./executables/delete.sh
 
 ## repo/merge: merge into master
 .PHONY: repo/merge
@@ -45,23 +45,15 @@ repo/merge:
 # ==================================================================================== #
 # BUILD
 # ==================================================================================== #
-## cont/build: builds the container image
-.PHONY: cont/build
-cont/build:
-	@docker build --no-cache  -f ./build/Dockerfile -t ${IMAGE_TAG} .
+## cntr/build: builds the container image
+.PHONY: cntr/build
+cntr/build:
+	@./build/build.sh
 
-# ==================================================================================== #
-# DOCKER HUB
-# ==================================================================================== #
-COMMIT=$(shell git describe --always --dirty)
-DOCKER_TAG=${DOCKER_ACCOUNT}/${IMAGE_TAG}.${COMMIT}
-
-## cont/push: push the container image to Docker Hub
-.PHONY: cont/push
-cont/push:
-	@docker tag ${IMAGE_TAG} ${DOCKER_TAG}
-	@docker push ${DOCKER_TAG}
-
+## cntr/push: push the container image to Docker Hub
+.PHONY: cntr/push
+cntr/push:
+	@./executables/push_docker.sh
 
 
 
