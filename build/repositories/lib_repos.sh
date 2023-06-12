@@ -10,14 +10,14 @@
 #######################################
 generate_sources_content() {
 read -r -d '' sources_content<<"EOF"
-deb http://deb.debian.org/debian/ bullseye main
-deb-src http://deb.debian.org/debian/ bullseye main
-deb http://security.debian.org/debian-security bullseye-security main contrib
-deb-src http://security.debian.org/debian-security bullseye-security main contrib
-deb http://deb.debian.org/debian/ bullseye-updates main contrib
-deb-src http://deb.debian.org/debian/ bullseye-updates main contrib
-deb http://deb.debian.org/debian-security/ bullseye-security main
-deb-src http://deb.debian.org/debian-security/ bullseye-security main
+deb http://deb.debian.org/debian bookworm main non-free-firmware
+deb-src http://deb.debian.org/debian bookworm main non-free-firmware
+
+deb http://deb.debian.org/debian-security/ bookworm-security main non-free-firmware
+deb-src http://deb.debian.org/debian-security/ bookworm-security main non-free-firmware
+
+deb http://deb.debian.org/debian bookworm-updates main non-free-firmware
+deb-src http://deb.debian.org/debian bookworm-updates main non-free-firmware
 EOF
 
 echo "${sources_content}"

@@ -1,11 +1,11 @@
-FROM debian:bullseye-20211011
+FROM debian:bookworm-20230522
 LABEL MAINTAINER="V8TIX"
 LABEL MAIL="info@v8tix.com"
 RUN ["/bin/bash", "-c", "mkdir /home/libraries"]
 RUN ["/bin/bash", "-c", "mkdir /home/libraries/zemni"]
-ADD ./build/repositories /home/repositories
-ADD ./build/packages /home/packages
-ADD ./build/entrypoint /home/entrypoint
+ADD repositories/ /home/repositories
+ADD packages/ /home/packages
+ADD entrypoint/ /home/entrypoint
 RUN ["/bin/bash", "-c", "chmod 777 /var/log/"]
 RUN ["/bin/bash", "-c", "chmod +x -R /home/repositories"]
 RUN ["/bin/bash", "-c", "chmod +x -R /home/packages"]
